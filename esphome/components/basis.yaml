@@ -23,6 +23,13 @@ wifi:
   # ssid: MyHomeNetwork
   # password: VerySafePassword
 
+  networks:
+    - ssid: "${wifi_ssid}"
+      password: "${wifi_password}"
+  fast_connect: "${wifi_fast_connect}"
+  use_address: "${networks_use_address}"
+  domain: "${networks_domain}"
+
   ap:
     ssid: "${name}"
     ap_timeout: 10s
