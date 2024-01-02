@@ -14,7 +14,7 @@
 |  ![S0tool-print](./static/assets/s0tool-huizebruin.jpg)  | ![dashboard](./static/assets/s0tool-dashboard.png) |
 
 ## Dutch version
-For the Dutch version look [Here](./README-nl.md) or on my [website](https://www.huizebruin.nl/home-assistant/wat-is-de-s0tool/) 
+For the Dutch version look on my [website](https://www.huizebruin.nl/home-assistant/wat-is-de-s0tool/) 
  
 <br><br>
 # How to order the <b>S0tool</b> ?
@@ -38,18 +38,7 @@ And a usb cable and minimal a usb power adapter with 5v and 1A
 Will it work with my meter check it out here. https://github.com/huizebruin/s0tool/discussions/57<br>
 
 
-# Update:
-| Datum | Information |
-| :--- | :--- |
-| 05/05/2022 | V2 is ready at my home for testing.|
-| 06/05/2022 | From now you can flash the  <b>s0tool</b> directly from your browser with a usb micro cable  [https://huizebruin.github.io/s0tool/](https://huizebruin.github.io/s0tool/)
-| 25/07/2022 | Watercounter gives now you Liters every 2 seconds a update to Home Assistant.|
-| 04/08/2022 | Text translate on Github to [English](./README.md) and [Dutch](./README-nl.md).|
-| 10/09/2022 | Flash page updated now options --> standard / watermeter / 1000imp puls / 2000imp puls .|
-| 29/10/2022 | Ad watermeter sensor to energy dashboard.|
-| 12/11/2022 | Fix for watermeter total and watermeter meter counter numbers.|
-| 14/11/2022 | Fix for watermeter now works with 2 pulses a liter choose 0.0005  and 1 puls a liter choose 0.001 default is 0.001.|
-| 18/11/2022 | Fix for meter counter for the kWh and water, and some cleanup of the code.|
+
 
 <br>
 Before update of the S0tool u should use, and above <br>
@@ -58,6 +47,11 @@ Before update of the S0tool u should use, and above <br>
 | :------------- | :--------- |
 | Home Assistant | v2022.11.1 |
 | ESPHome | v2022.10.1 |
+
+<br>
+
+## Information:<br>
+  Wi-fi : IEEE 802.11 b/g/n 2.4GHz 
 
 <br>
 
@@ -118,9 +112,7 @@ The more energy you consume or supply back, the faster it will switch.<br>
 ![afbeelding](./static/assets/kwh_Meter_Pulse.jpg)<br>
 How to put it to your setup<br>
 ![afbeelding](./static/assets/s0tool-s0-kwh-poort.jpg)<br>
-There is a small error in <b>v1</b>, in the s0 connection is the <b>GND</b> I.P.V <b>5v+</b>.<br>
 
-<br> Since 01-07-2022 only V2 is sent out.
 ***
 <br>
 
@@ -138,7 +130,7 @@ Connect the s0tool to your PC/laptop with a USB cable and start the procedure.
 
 1. Install Home Assistant & Esphome .
 2. Connect the wemos d1 mini to a USB charger.
-3. Go to <b>ssid:</b> ```S0tool``` & <b> password:</b> ```s0watermeter```
+3. Go to <b>ssid:</b> ```S0tool``` 
 4. Go to ```192.168.4.1```.
 5. Put the correct SSID and Password in the fields
 6. Wait until it is ready, and then it will indicate the address where it can be found (put it in your router)
@@ -160,7 +152,7 @@ Connect the s0tool to your PC/laptop with a USB cable and start the procedure.
     cycle: hourly
 enz...
 ```
-Those in the file are in the folder[utility_meter/utility.yaml](https://github.com/huizebruin/s0tool/blob/main/utility_meter/utility.yaml) 
+Those in the file are in the folder [utility_meter/utility.yaml](https://github.com/huizebruin/s0tool/blob/main/utility_meter/utility.yaml) 
 
 12. Optionally to see if there are new updates, you can create the following sensor in your configuration.yaml:<br>
 (or you copy the sensor file from the sensor folder and put it all in your own configuration).
@@ -202,26 +194,30 @@ You must have added all the above sensors.
 
 ***
 ## Adjusting the meter reading
-To adjust the water meter position:
-[![Open your Home Assistant instance and show your service developer tools with a specific service selected.](https://my.home-assistant.io/badges/developer_call_service.svg)](https://my.home-assistant.io/redirect/developer_call_service/?service=ESPHome%3A+s0tool_meterstand_water)
-<br><br>
-To adjust your kWh meter reading: [![Open your Home Assistant instance and show your service developer tools with a specific service selected.](https://my.home-assistant.io/badges/developer_call_service.svg)](https://my.home-assistant.io/redirect/developer_call_service/?service=ESPHome%3A+s0tool_meterstand_kwh)
-<br><br>
-Or this option and then search for the right meter and then adjust, <br> here you can update all meter readings:
-[![Open your Home Assistant instance and show your service developer tools with a specific service selected.](https://my.home-assistant.io/badges/developer_call_service.svg)](https://my.home-assistant.io/redirect/developer_call_service/?service=Nutsmeter%3A+Calibrate)
+
+[![Open your Home Assistant instance and show your service developer tools with a specific service selected.](https://my.home-assistant.io/badges/developer_call_service.svg)](https://my.home-assistant.io/redirect/developer_call_service/?service=ESPHome%3A+s0tool_meterstand_water) To adjust the water meter position.
+<br>
+ [![Open your Home Assistant instance and show your service developer tools with a specific service selected.](https://my.home-assistant.io/badges/developer_call_service.svg)](https://my.home-assistant.io/redirect/developer_call_service/?service=ESPHome%3A+s0tool_meterstand_kwh) To adjust your kWh meter reading
+<br>
+Or this option and then search for the right meter and then adjust, <br> 
+[![Open your Home Assistant instance and show your service developer tools with a specific service selected.](https://my.home-assistant.io/badges/developer_call_service.svg)](https://my.home-assistant.io/redirect/developer_call_service/?service=Nutsmeter%3A+Calibrate) here you can update all meter readings
 <br>
 
 ****
 ## Update function
-04-08-2022 : <br> I'm working on a feature to keep this tool always up to date with the latest version on github.
+
 This can be done by the ESPHome dashboard by now.
 ***
 
 Have fun with this tool.<br>
 Any additions / improvements <br> may be made via <b>[Pull requests](https://github.com/huizebruin/s0tool/pulls)</b> be supplemented.<br> 
-Or via<b>[issues](https://github.com/huizebruin/s0tool/issues) </b> requested or added.
-<br><br><b>
-Wobbe from Huizebruin.nl</b>
+Or via<b> [issues](https://github.com/huizebruin/s0tool/issues) </b> requested or added.
+<br><br><br><b>
+Wobbe </b><br>
+From <a href="https://www.Huizebruin.nl" rel="noreferer, ,noopener" target="_blank">Huizebruin.nl</a>
+
+Do you like my work ?  [![](https://img.shields.io/badge/send%20me%20a%20small%20gift-paypal-blue.svg?style=flat-square)](https://paypal.me/huizebruin) <br>
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/W7W4QU9ZX)
 <br><br>
 For more information and connection diagrams, etc., take a look at the [website](https://www.huizebruin.nl/home-assistant/wat-is-de-s0tool/).
 ***
@@ -235,21 +231,52 @@ Who else is working on this project : <br>
 
 ****
 
+<h2 id="troubleshooting">Troubleshooting</h2>
+
+<h3 id="drivers">USB Serial Drivers</h3>
+<p>
+  If the serial port is not showing up, your computer might be missing the
+  drivers for the USB serial chip used in your ESP device. These drivers
+  work for most ESP devices:
+</p>
+  <ul>
+  <li>
+    CP2102 (square chip):
+    <a href="https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers" rel="noreferer, ,noopener" target="_blank">driver</a>
+  </li>
+  <li>
+    CH341:
+    <a href="https://github.com/nodemcu/nodemcu-devkit/tree/master/Drivers" rel="noreferer, ,noopener" target="_blank">driver</a>
+  </li>
+  <li>
+    CH340:
+    <a href="https://sparks.gogo.co.nz/ch340.html" rel="noreferer, ,noopener" target="_blank">driver</a>
+  </li>
+  </ul>
+<br>
+
+
 ## License
+<div style="text-align:left;font-size:14px;">
 
 MIT License
 
-Copyright (c) 2021 / 2022 Huizebruin.nl
+Copyright (c) 2021 / 2023 Huizebruin.nl
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+</div>
 
 ***
 
 <a href="https://tc.tradetracker.net/?c=27&amp;m=39668&amp;a=385034&amp;r=&amp;u=" target="_blank" rel="sponsored nofollow">Make money with your site. Start now, sign up here.</a>
+<div style="text-align:center;font-size:13px;">
+      <hr>
+      <a href="https://esphome.github.io/esp-web-tools/" target="_blank" style="color:#aaa;">S0tool Installer powered by ESP Web Tools</a>
+    </div>
 
 
 
